@@ -1,48 +1,52 @@
-// pos is the PacMan image position variable- it is set to 0 initially
-var pos = 0;
-//pageWidth is the width of the webpage. This is later used to calculate when Pac-Man needs to turn around. 
-let pageWidth = window.innerWidth;
-//This array contains all the PacMan movement images
+var focus = 0;
+const pacMen = []; 
 const pacArray = [
-  ['./images/PacMan1.png', './images/PacMan2.png'],
-  ['./images/PacMan3.png', './images/PacMan4.png'],
+  	['./images/PacMan1.png', './images/PacMan2.png'],['./images/PacMan3.png', './images/PacMan4.png'],
 ];
 
-// this variable defines what direction should PacMan go into:
-// 0 = left to right
-// 1 = right to left (reverse)
-var direction = 0;
-
-// This variable helps determine which PacMan image should be displayed. It flips between values 0 and 1
-var focus = 0;
-
-// This function is called on mouse click. Every time it is called, it updates the PacMan image, position and direction on the screen.
-function Run() {
-  let img = document.getElementById('PacMan');
-  let imgWidth = img.width;
-  focus = (focus + 1) % 2;
-  direction = checkPageBounds(direction, imgWidth, pos, null);
-  img.src = pacArray[direction][focus];
-  if (direction) {
-    pos -= 20;
-    img.style.left = pos + 'px';
-  } else {
-    pos += 20;
-    img.style.left = pos + 'px';
-  }
+function setToRandom(scale) {
+  	return {
+    		x: Math.random() * scale, y: Math.random() * scale,
+  	};
 }
 
-
-setInterval(Run, 200);
-// Inside of the Run() function you will also have to add an extra argument "pageWidth", which is declared on line 4 when you call the checkPageBounds() function below. 
-
-// This function determines the direction of PacMan based on screen edge detection. 
-function checkPageBounds(direction, imgWidth, pos, pageWidth) {
-  if (direction == 0 && pos + imgWidth > pageWidth){
-     direction  = 1;}
-  else if (direction == 1 && pos < 0) {direction = 0;}
-  return direction;
+function makePac() {
+  	let velocity = setToRandom(13); // {x:?, y:?}
+  	let position = setToRandom(800);
+	let direction = 0;
+  	let game = document.getElementById('game');
+  	let img = document.createElement('img');
+  	img.style.position = 'absolute';
+  	img.src = './images/PacMan1.png';
+  	img.style.width = 100;
+  	img.style.left = position.x + "px";
+  	img.style.top = position.y + "px";
+  	game.appendChild(img);
+  	return {
+    		position, velocity, img, direction
+  	};
 }
 
-//Please do not change
-//module.exports = checkPageBounds;
+function update() {
+	focus = (focus + 1) % 2;
+  	pacMen.forEach((item) => {
+    		checkCollisions(item);
+		item.img.src = pacArray[item.direction][focus];
+    		item.position.x += item.velocity.x;
+    		item.position.y += item.velocity.y;
+    		item.img.style.left = item.position.x;
+    		item.img.style.top = item.position.y;
+  	});
+  	setTimeout(update, 125);
+}
+
+function checkCollisions(item) {
+	let edgeW = window.innerWidth - item.img.width; let edgeH = window.innerHeight -item.img.width;
+	if (item.position.x >= edgeW){item.velocity.x = item.velocity.x * -1; item.direction = 1;}
+	if (item.position.x <=0){item.velocity.x = item.velocity.x * -1; item.direction = 0;}
+	if (item.position.y >= edgeH || item.position.y <=0){item.velocity.y = item.velocity.y * -1;}
+}
+
+function makeOne() {
+pacMen.push(makePac()); 
+}
