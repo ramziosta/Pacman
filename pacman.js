@@ -4,7 +4,7 @@ const pacArray = [
   	['./PacMan1.png', './PacMan2.png'],['./PacMan3.png', './PacMan4.png']
 ];
 
-function setToRandom(scale) {
+unction setToRandom(scale) {
   	return {
     		x: Math.random() * scale, y: Math.random() * scale,
   	};
@@ -17,7 +17,7 @@ function makePac() {
   	let game = document.getElementById('game');
   	let img = document.createElement('img');
   	img.style.position = 'absolute';
-  	img.src = './images/PacMan1.png';
+  	img.src = './Projects/PacMan1.png';
   	img.style.width = 100;
   	img.style.left = position.x + "px";
   	img.style.top = position.y + "px";
