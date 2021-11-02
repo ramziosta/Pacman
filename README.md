@@ -1,5 +1,4 @@
 #########
-If you've ever played an arcade game, then you're familiar with Pac-Man!
 
 This is the game where the player controls PacMan who travels inside a maze trying to eat all the dots while avoiding the colorful ghosts.
 
@@ -28,3 +27,41 @@ Hint: setInterval allows you to run a function repeatedly, starting after the in
 
 1-Update checkPageBounds to reverse Pac-Man direction upon hitting the edge of the screen
 2-Pac-man direction reversed
+
+
+
+<h3>How to Use</h3>
+<ol>
+<li>Fork a Copy of this project to your Github page</li>
+<li>Clone a copy from your Github page to your local work environment</li>
+<li>Open the index file using a browser</li>
+</ol>
+<h3>Roadmap</h3>
+<p> use in a game or animation on a page</p>
+<h3>Contributors</h3>
+<ul>
+  <li>Ramzi Osta</li>
+  <li>Dr. Williams</li>
+ </ul>
+<h2>License</h2>
+  <p>MIT License</p>
+  <p>Copyright (c) 2021 Bill Ramzi Osta</p>
+  <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+  <p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+  <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+
+
+
