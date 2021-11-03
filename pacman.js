@@ -4,7 +4,7 @@ const pacArray = [
   	['./PacMan1.png', './PacMan2.png'],['./PacMan3.png', './PacMan4.png']
 ];
 
-unction setToRandom(scale) {
+function setToRandom(scale) {
   	return {
     		x: Math.random() * scale, y: Math.random() * scale,
   	};
