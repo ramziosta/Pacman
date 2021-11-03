@@ -18,7 +18,7 @@ function makePac() {
   	let game = document.getElementById('game');
   	let img = document.createElement('img');
   	img.style.position = 'absolute';
-  	img.src = './PacMan1.png';
+  	img.src = './images/PacMan1.png';
   	img.style.width = 100;
   	img.style.left = position.x + "px";
   	img.style.top = position.y + "px";
