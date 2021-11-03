@@ -1,9 +1,10 @@
-var focus = 0;
-const pacMen = []; 
 const pacArray = [
   	['./PacMan1.png', './PacMan2.png'],['./PacMan3.png', './PacMan4.png']
 ];
+var focus = 0;
+const pacMen = [];  // This array holds all the pacmen
 
+// This function returns an object with random values
 function setToRandom(scale) {
   	return {
     		x: Math.random() * scale, y: Math.random() * scale,
